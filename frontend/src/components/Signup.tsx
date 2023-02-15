@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const Signup = () => {
+const Signup = ({ navigate }: {navigate: any}) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

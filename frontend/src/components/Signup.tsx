@@ -8,13 +8,16 @@ const Signup = () => {
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
-    console.log(email);
   }
 
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
-    console.log(password);
   }
+
+  useEffect(() => {
+    console.log(email);
+    console.log(password);
+  }, [email, password])
 
   return (
     <div>

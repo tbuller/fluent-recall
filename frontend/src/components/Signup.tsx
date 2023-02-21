@@ -14,8 +14,22 @@ const Signup = ({ navigate }: {navigate: any}) => {
     setPassword(event.target.value);
   }
 
-  const handleSubmit = () => {
-    navigate("/");
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    fetch("/users", {
+      method: "post",
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({ email: email, password: password })
+    }).then((response) => {
+      if (response.status === 201) {
+        navigate("/myhome");
+      } else {
+        console.log(response);
+        navigate("/signup");
+      }
+    });
   }
 
   useEffect(() => {
@@ -30,9 +44,7 @@ const Signup = ({ navigate }: {navigate: any}) => {
     <input type="text" onChange={handleEmailChange}/>
     <label>Please choose a password:</label>
     <input type="password" onChange={handlePasswordChange}/>
-    <label>Please enter your password again:</label>
-    <input type="password"/>
-    <input type="submit"/>
+    <button type="submit">submit</button>
     </form>  
     </div>
   )

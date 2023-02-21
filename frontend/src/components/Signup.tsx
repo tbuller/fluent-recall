@@ -16,14 +16,14 @@ const Signup = ({ navigate }: {navigate: any}) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    fetch("/users", {
+    fetch("http://localhost:8080/users", {
       method: "post",
       headers: {
         "Content-Type" : "application/json"
       },
       body: JSON.stringify({ email: email, password: password })
     }).then((response) => {
-      if (response.status === 201) {
+      if (response.status === 200) {
         navigate("/myhome");
       } else {
         console.log(response);

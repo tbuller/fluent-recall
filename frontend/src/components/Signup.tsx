@@ -14,6 +14,10 @@ const Signup = ({ navigate }: {navigate: any}) => {
     setPassword(event.target.value);
   }
 
+  const handleSubmit = () => {
+    navigate("/");
+  }
+
   useEffect(() => {
     console.log(email);
     console.log(password);
@@ -21,12 +25,15 @@ const Signup = ({ navigate }: {navigate: any}) => {
 
   return (
     <div>
+    <form onSubmit={handleSubmit}>
     <label>Please enter your email:</label>
     <input type="text" onChange={handleEmailChange}/>
     <label>Please choose a password:</label>
     <input type="password" onChange={handlePasswordChange}/>
     <label>Please enter your password again:</label>
     <input type="password"/>
+    <input type="submit"/>
+    </form>  
     </div>
   )
 }

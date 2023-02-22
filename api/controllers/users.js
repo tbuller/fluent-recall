@@ -11,6 +11,15 @@ const UsersController = {
         res.status(201).json({ message: "OK" });
       }
     });
+  },
+  List: (req, res, next) => {
+    User.find({}, (err, users) => {
+      if (err) {
+        res.status(500).json({ message: "Internal server error" });
+      } else {
+        res.status(200).json({ users: users });
+      }
+    });
   }
 }
 

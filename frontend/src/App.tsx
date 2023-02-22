@@ -3,6 +3,7 @@ import './App.css';
 import Landing from './components/Landing';
 import Signup from './components/Signup';
 import MyHome from './components/MyHome';
+import Login from './components/Login';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Landing navigate={navigate} />} />
         <Route path="/signup" element={<Signup navigate={navigate} />} />
+        <Route path="/login" element={<Login navigate={navigate} />} />
         <Route path="myhome" element={<MyHome navigate={navigate} />} />
       </Routes>
   );

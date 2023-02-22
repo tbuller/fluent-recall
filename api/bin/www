@@ -6,7 +6,7 @@ var mongoose = require("mongoose");
 var port = normalizePort("8080");
 app.set("port", port);
 
-var mongoDbUrl = "mongodb://localhost:27017/filing";
+var mongoDbUrl = "mongodb://localhost:27017/fluent";
 mongoose.connect(mongoDbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

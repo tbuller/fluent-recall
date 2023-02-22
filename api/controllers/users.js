@@ -7,7 +7,8 @@ const UsersController = {
       if (err) {
         res.status(401).json({ message: "Bad request" });
       } else {
-        res.status(200).json({ message: "OK" });
+        // console.log(user);
+        res.status(201).json({ message: "OK" });
       }
     });
   }

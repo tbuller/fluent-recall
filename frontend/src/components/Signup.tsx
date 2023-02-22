@@ -23,7 +23,7 @@ const Signup = ({ navigate }: {navigate: any}) => {
       },
       body: JSON.stringify({ email: email, password: password })
     }).then((response) => {
-      if (response.status === 200) {
+      if (response.status === 201) {
         navigate("/myhome");
       } else {
         console.log(response);

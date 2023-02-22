@@ -3,7 +3,17 @@ import { useState, useEffect } from 'react';
 
 const Login = ({ navigate }: {navigate: any}) => {
 
-  const [users, setUsers] = useState([]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [users, setUsers] = useState<any[]>([]);
+
+  const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  }
+
+  const handlePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value);
+  }
 
   useEffect(() => {
     fetch("http://localhost:8080/users")
@@ -12,15 +22,23 @@ const Login = ({ navigate }: {navigate: any}) => {
       // console.log(users);
   }, []);
 
-  const showUsers = () => {
-    console.log(users)
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const matchesUser = users.map(u => u.email === email && u.password === password);
+    if (matchesUser.includes(true)) {
+      navigate("/myhome");
+    } else {
+      console.log("not today son");
+    }
   }
 
   return (
     <div>
-    <input type="text" />
-    <input type="password" />
-    <button onClick={showUsers}>click me</button>
+    <form onSubmit={handleSubmit}>  
+    <input type="text" onChange={handleEmail} />
+    <input type="password" onChange={handlePassword} />
+    <button type="submit">submit</button>
+    </form>
     </div>
   )
 }

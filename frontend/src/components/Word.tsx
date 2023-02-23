@@ -1,12 +1,17 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const Word = (props: { words: any }) => {
+const Word = ({ words }: { words: any }) => {
+
+  const showWords = () => {
+    console.log(words);
+  }
 
   return (
-    <>
-    <div>Hello world</div>
-    </>
+    <div className="word-container">
+    <div className="word-container">Hello world</div>
+    <button onClick={showWords}>click</button>
+    </div>
   )
 }
 

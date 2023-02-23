@@ -5,9 +5,9 @@ const MyHome = ({ navigate }: {navigate: any}) => {
   return (
     <div>
     <h1>This is your home page</h1>
-    <button><GiItalia /></button>
-    <button><GiFrance /></button>
-    <button><GiSpain /></button>
+    <button className="language-icon"><GiItalia /></button>
+    <button className="language-icon"><GiFrance /></button>
+    <button className="language-icon"><GiSpain /></button>
     </div>
   )
 }

@@ -24,8 +24,9 @@ const Login = ({ navigate }: {navigate: any}) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const matchesUser = users.map(u => u.email === email && u.password === password);
-    if (matchesUser.includes(true)) {
+    const matchesUser = users.find(u => u.email === email && u.password === password);
+    if (matchesUser) {
+      localStorage.setItem("userID", matchesUser._id)
       navigate("/myhome");
     } else {
       console.log("not today son");

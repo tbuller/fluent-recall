@@ -1,0 +1,21 @@
+.language-icon {
+  background-color: rgb(128, 179, 128);
+  margin-left: 5px;
+  height: 40px;
+  width: 40px;
+  padding-top: 7px;
+  font-size: 22px;
+  border-radius: 10px;
+}
+
+.language-icon:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+
+.input-word {
+  margin-left: 20px;
+  border-radius: 10px;
+  height: 20px;
+  width: 250px;
+}

@@ -64,7 +64,7 @@ const MyHome = ({ navigate }: {navigate: any}) => {
     <button onClick={saveWord}>Click me</button>
     <button onClick={showWords}>Click me</button>
     </div>
-    <Tabs />
+    <Tabs words={words} />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import './MyHome.css';
+import './styling/MyHome.css';
 import { GiItalia, GiFrance, GiSpain } from 'react-icons/gi';
 import { useEffect, useState } from 'react';
 import React from 'react';

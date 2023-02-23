@@ -1,5 +1,5 @@
 .create-word-container {
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 }
 
 .language-icon {
@@ -22,8 +22,4 @@
   border-radius: 10px;
   height: 20px;
   width: 250px;
-}
-
-.card-container {
-  border-top: 5px solid black;
 }

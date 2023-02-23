@@ -8,6 +8,13 @@ const MyHome = ({ navigate }: {navigate: any}) => {
   const [language, setLanguage] = useState("");
   const [englishWord, setEnglishWord] = useState("");
   const [targetWord, setTargetWord] = useState("");
+  const [words, setWords] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/words")
+      .then(response => response.json())
+      .then(data => setWords(data.words))
+  }, []);
 
   const handleEnglish = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEnglishWord(event.target.value);
@@ -18,9 +25,7 @@ const MyHome = ({ navigate }: {navigate: any}) => {
   }
 
   const showWords = () => {
-    console.log(englishWord);
-    console.log(targetWord);
-    console.log(language);
+    console.log(words);
   }
 
   const saveWord = () => {
@@ -49,6 +54,7 @@ const MyHome = ({ navigate }: {navigate: any}) => {
     <input type="text" className="input-word" onChange={handleEnglish} />
     <input type="text" className="input-word" onChange={handleTarget} />
     <button onClick={saveWord}>Click me</button>
+    <button onClick={showWords}>Click me</button>
     </div>
   )
 }

@@ -16,7 +16,7 @@ const WordsController = {
       if (err) {
         res.status(500).json({ message: "connection error" });
       } else {
-        res.status(200).json({ message: "OK" });
+        res.status(200).json({ words: words });
       }
     })
   }

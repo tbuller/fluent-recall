@@ -2,6 +2,7 @@ import './MyHome.css';
 import { GiItalia, GiFrance, GiSpain } from 'react-icons/gi';
 import { useEffect, useState } from 'react';
 import React from 'react';
+import Tabs from "./Tabs";
 
 const MyHome = ({ navigate }: {navigate: any}) => {
 
@@ -54,6 +55,7 @@ const MyHome = ({ navigate }: {navigate: any}) => {
   return (
     <div>
     <h1>This is your home page</h1>
+    <div className="create-word-container">
     <button className="language-icon" onClick={() => setLanguage("Italian")}><GiItalia /></button>
     <button className="language-icon" onClick={() => setLanguage("French")}><GiFrance /></button>
     <button className="language-icon" onClick={() => setLanguage("Spanish")}><GiSpain /></button>
@@ -61,6 +63,8 @@ const MyHome = ({ navigate }: {navigate: any}) => {
     <input type="text" className="input-word" onChange={handleTarget} />
     <button onClick={saveWord}>Click me</button>
     <button onClick={showWords}>Click me</button>
+    </div>
+    <Tabs />
     </div>
   )
 }

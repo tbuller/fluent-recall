@@ -7,7 +7,7 @@ const WordsController = {
       if (err) {
         res.status(401).json({ message: "Bad request" });
       } else {
-        res.status(201).json({ message: "OK" });
+        res.status(201).json({ word: word });
       }
     });
   },

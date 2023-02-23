@@ -8,7 +8,7 @@ const MyHome = ({ navigate }: {navigate: any}) => {
   const [language, setLanguage] = useState("");
   const [englishWord, setEnglishWord] = useState("");
   const [targetWord, setTargetWord] = useState("");
-  const [words, setWords] = useState([]);
+  const [words, setWords] = useState<any[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:8080/words")
@@ -29,19 +29,25 @@ const MyHome = ({ navigate }: {navigate: any}) => {
   }
 
   const saveWord = () => {
+    const body = JSON.stringify({
+      userID: localStorage.userID,
+      language: language,
+      english: englishWord,
+      target: targetWord,
+      past10: []
+    })
     fetch("http://localhost:8080/words", {
       method: "post",
       headers: {
       "Content-Type" : "application/json"
       },
-      body: JSON.stringify({
-        userID: localStorage.userID,
-        language: language,
-        english: englishWord,
-        target: targetWord,
-        past10: []
-      })
+      body: body
     })
+      .then(response => response.json())
+      .then(data => {
+        setWords([...words, data.word]);
+      })
+    
   }
   
 

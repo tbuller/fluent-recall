@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 
 const Word = ({ words }: { words: any }) => {
 
-  const [deletedId, setDeletedId] = useState("")
+  // const [deletedId, setDeletedId] = useState("")
 
   const deleteWord = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setDeletedId(event.currentTarget.value);
+    const deletedId = event.currentTarget.value;
     fetch("http://localhost:8080/words", {
       method: "delete",
       headers: {

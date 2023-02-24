@@ -20,7 +20,7 @@ const Tabs = ({ words, handleWordDelete, practiceMode }: { words: any, handleWor
     <button className={`tab-button ${tab === "Italian" ? 'active' : ''}`} onClick={() => setTab("Italian")}>Italian</button>
     </div>
     <div>
-    {practiceMode ? <Practice /> : <Word words={words} handleWordDelete={handleWordDelete} tab={tab} />}    
+    {practiceMode ? <Practice words={words} tab={tab} /> : <Word words={words} handleWordDelete={handleWordDelete} tab={tab} />}    
     </div>
     </div>
   )

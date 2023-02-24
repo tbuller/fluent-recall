@@ -5,7 +5,7 @@ import Word from "./Word";
 
 const Tabs = ({ words, handleWordDelete }: { words: any, handleWordDelete: (id: string) => void }) => {
 
-  const [tab, setTab] = useState(1);
+  const [tab, setTab] = useState("French");
 
   const showTab = () => {
     console.log(tab);
@@ -14,12 +14,12 @@ const Tabs = ({ words, handleWordDelete }: { words: any, handleWordDelete: (id: 
   return (
     <div className="tabs-cards-container">
     <div className="tab-buttons-container">
-    <button className={`tab-button ${tab === 1 ? 'active' : ''}`} onClick={() => setTab(1)}>French</button>
-    <button className={`tab-button ${tab === 2 ? 'active' : ''}`} onClick={() => setTab(2)}>Spanish</button>
-    <button className={`tab-button ${tab === 3 ? 'active' : ''}`} onClick={() => setTab(3)}>Italian</button>
+    <button className={`tab-button ${tab === "French" ? 'active' : ''}`} onClick={() => setTab("French")}>French</button>
+    <button className={`tab-button ${tab === "Spanish" ? 'active' : ''}`} onClick={() => setTab("Spanish")}>Spanish</button>
+    <button className={`tab-button ${tab === "Italian" ? 'active' : ''}`} onClick={() => setTab("Italian")}>Italian</button>
     </div>
     <div>
-    <Word words={words} handleWordDelete={handleWordDelete} />
+    <Word words={words} handleWordDelete={handleWordDelete} tab={tab} />
     </div>
     </div>
   )

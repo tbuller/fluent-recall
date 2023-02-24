@@ -6,7 +6,7 @@ import Tabs from "./Tabs";
 
 const MyHome = ({ navigate }: {navigate: any}) => {
 
-  const [language, setLanguage] = useState("");
+  const [language, setLanguage] = useState("French");
   const [englishWord, setEnglishWord] = useState("");
   const [targetWord, setTargetWord] = useState("");
   const [words, setWords] = useState<any[]>([]);
@@ -60,9 +60,9 @@ const MyHome = ({ navigate }: {navigate: any}) => {
     <div>
     <h1>This is your home page</h1>
     <div className="create-word-container">
-    <button className="language-icon" onClick={() => setLanguage("Italian")}><GiItalia /></button>
     <button className="language-icon" onClick={() => setLanguage("French")}><GiFrance /></button>
     <button className="language-icon" onClick={() => setLanguage("Spanish")}><GiSpain /></button>
+    <button className="language-icon" onClick={() => setLanguage("Italian")}><GiItalia /></button>
     <input type="text" className="input-word" onChange={handleEnglish} />
     <input type="text" className="input-word" onChange={handleTarget} />
     <button onClick={saveWord}>Click me</button>

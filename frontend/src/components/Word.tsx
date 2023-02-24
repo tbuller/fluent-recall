@@ -2,7 +2,7 @@ import "./styling/Word.css";
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const Word = ({ words, handleWordDelete }: { words: any, handleWordDelete: (id: string) => void }) => {
+const Word = ({ words, handleWordDelete, tab }: { words: any, handleWordDelete: (id: string) => void, tab: string }) => {
 
   // const [deletedId, setDeletedId] = useState("")
 
@@ -19,12 +19,14 @@ const Word = ({ words, handleWordDelete }: { words: any, handleWordDelete: (id: 
       .then(data => {
         handleWordDelete(deletedId);
       })  
+    console.log(tab);  
   }
 
   return (
     <div className="word-container">
     <div>
-      {words.map((w: any) => 
+      {words.map((w: any) =>
+      w.language === tab && 
         <span className="word-card" key={w._id}>
           {w.english}
         <span className="delete-card-container">

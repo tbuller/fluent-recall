@@ -50,6 +50,10 @@ const MyHome = ({ navigate }: {navigate: any}) => {
       })
     
   }
+
+  const handleWordDelete = (deletedId: string) => {
+    setWords(words.filter(w => w._id !== deletedId))
+  }
   
 
   return (
@@ -64,7 +68,7 @@ const MyHome = ({ navigate }: {navigate: any}) => {
     <button onClick={saveWord}>Click me</button>
     <button onClick={showWords}>Click me</button>
     </div>
-    <Tabs words={words} />
+    <Tabs words={words} handleWordDelete={handleWordDelete} />
     </div>
   )
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Word from "./Word";
 
-const Tabs = ({ words }: { words: typeof Word[] }) => {
+const Tabs = ({ words, handleWordDelete }: { words: any, handleWordDelete: (id: string) => void }) => {
 
   const [tab, setTab] = useState(1);
 
@@ -19,7 +19,7 @@ const Tabs = ({ words }: { words: typeof Word[] }) => {
     <button className={`tab-button ${tab === 3 ? 'active' : ''}`} onClick={() => setTab(3)}>Italian</button>
     </div>
     <div>
-    <Word words={words} />
+    <Word words={words} handleWordDelete={handleWordDelete} />
     </div>
     </div>
   )

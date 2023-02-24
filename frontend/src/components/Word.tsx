@@ -2,7 +2,7 @@ import "./styling/Word.css";
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const Word = ({ words }: { words: any }) => {
+const Word = ({ words, handleWordDelete }: { words: any, handleWordDelete: (id: string) => void }) => {
 
   // const [deletedId, setDeletedId] = useState("")
 
@@ -16,7 +16,9 @@ const Word = ({ words }: { words: any }) => {
       body: JSON.stringify({ deletedId: deletedId })
     })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => {
+        handleWordDelete(deletedId);
+      })  
   }
 
   return (

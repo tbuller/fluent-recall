@@ -25,7 +25,7 @@ const WordsController = {
     console.log(deletedId);
     Word.deleteOne({_id: deletedId}, (err) => {
       if (err) {
-        res.status(400).json({ message: deletedId });
+        res.status(400).json({ message: "Bad request" });
       } else {
         res.status(200).json({ message: deletedId });
       }

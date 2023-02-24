@@ -4,11 +4,22 @@ import { useState, useEffect } from 'react';
 const Practice = ({ words, tab }: { words: any, tab: string }) => {
 
   const [answer, setAnswer] = useState("");
-  // const [correctAnswer, setCorrectAnswer] = useState("");
+  // const [isCorrect, setIsCorrect] = useState("");
 
   const compareAnswer = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const correctAnswer = event.currentTarget.value;
-    answer === correctAnswer ? console.log("correct") : console.log("try again");
+    const [attemptedId, correctAnswer] = event.currentTarget.value.split(":");
+    const isCorrect = answer === correctAnswer ? "Pass" : "Fail";
+    fetch("http://localhost:8080/words", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ attemptedId: attemptedId, isCorrect: isCorrect })
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+    // console.log(attemptedId);
+    // console.log(correctAnswer);
   }
 
   return (
@@ -18,7 +29,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         <div className="practice-card" key={w._id}>
         <div>{w.english}</div>
         <input type="text" onChange={(event) => setAnswer(event.target.value)} />
-        <button value={w.target} onClick={compareAnswer}>
+        <button value={`${w._id}:${w.target}`} onClick={compareAnswer}>
         Submit and Compare
         </button>
         </div>

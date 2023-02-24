@@ -30,6 +30,21 @@ const WordsController = {
         res.status(200).json({ message: deletedId });
       }
     })
+  },
+  Update: (req, res, next) => {
+    const attemptedId = req.body.attemptedId;
+    const isCorrect = req.body.isCorrect;
+    Word.findByIdAndUpdate(attemptedId,
+      { $push: { past10: isCorrect } },
+      { new: true },
+      (err, document) => {
+        if (err) {
+          res.status(400).json({ message: "Bad request" });
+        } else {
+          res.status(200).json({ message: document });
+        }
+      }
+    )
   }
 }
 

@@ -2,8 +2,9 @@ import "./styling/Tabs.css";
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Word from "./Word";
+import Practice from "./Practice";
 
-const Tabs = ({ words, handleWordDelete }: { words: any, handleWordDelete: (id: string) => void }) => {
+const Tabs = ({ words, handleWordDelete, practiceMode }: { words: any, handleWordDelete: (id: string) => void, practiceMode: boolean }) => {
 
   const [tab, setTab] = useState("French");
 
@@ -19,7 +20,7 @@ const Tabs = ({ words, handleWordDelete }: { words: any, handleWordDelete: (id: 
     <button className={`tab-button ${tab === "Italian" ? 'active' : ''}`} onClick={() => setTab("Italian")}>Italian</button>
     </div>
     <div>
-    <Word words={words} handleWordDelete={handleWordDelete} tab={tab} />
+    {practiceMode ? <Practice /> : <Word words={words} handleWordDelete={handleWordDelete} tab={tab} />}    
     </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import './styling/MyHome.css';
 import { GiItalia, GiFrance, GiSpain } from 'react-icons/gi';
+import { IoMdSchool } from 'react-icons/io';
 import { useEffect, useState } from 'react';
 import React from 'react';
 import Tabs from "./Tabs";
@@ -10,6 +11,7 @@ const MyHome = ({ navigate }: {navigate: any}) => {
   const [englishWord, setEnglishWord] = useState("");
   const [targetWord, setTargetWord] = useState("");
   const [words, setWords] = useState<any[]>([]);
+  const [practiceMode, setPracticeMode] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:8080/words")
@@ -67,8 +69,9 @@ const MyHome = ({ navigate }: {navigate: any}) => {
     <input type="text" className="input-word" onChange={handleTarget} />
     <button onClick={saveWord}>Click me</button>
     <button onClick={showWords}>Click me</button>
+    <button className="practice-button" onClick={() => setPracticeMode(!practiceMode)}>{ practiceMode ? <IoMdSchool /> : "Practice?" }</button>
     </div>
-    <Tabs words={words} handleWordDelete={handleWordDelete} />
+    <Tabs words={words} handleWordDelete={handleWordDelete} practiceMode={practiceMode} />
     </div>
   )
 }

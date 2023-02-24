@@ -19,6 +19,17 @@ const WordsController = {
         res.status(200).json({ words: words });
       }
     })
+  },
+  Delete: (req, res, next) => {
+    const deletedId = req.body.deletedId
+    console.log(deletedId);
+    Word.deleteOne({_id: deletedId}, (err) => {
+      if (err) {
+        res.status(500).json({ message: "Bad request" });
+      } else {
+        res.status(200).json({ message: deletedId });
+      }
+    })
   }
 }
 

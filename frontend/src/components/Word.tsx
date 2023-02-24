@@ -7,14 +7,16 @@ const Word = ({ words }: { words: any }) => {
   const [deletedId, setDeletedId] = useState("")
 
   const deleteWord = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setDeletedId(event.currentTarget.value)
-    fetch("http://localhost/8080/words", {
+    setDeletedId(event.currentTarget.value);
+    fetch("http://localhost:8080/words", {
       method: "delete",
       headers: {
         "Content-Type": "application/json"
       },
-      body: deletedId
+      body: JSON.stringify({ deletedId: deletedId })
     })
+      .then(response => response.json())
+      .then(data => console.log(data))
   }
 
   return (

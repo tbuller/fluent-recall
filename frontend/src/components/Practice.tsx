@@ -1,3 +1,6 @@
+import "./styling/Practice.css";
+import { IoMdSchool } from 'react-icons/io';
+import { VscRunAll } from 'react-icons/vsc';
 import React from 'react';
 import { useState, useEffect } from 'react';
 
@@ -27,11 +30,15 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
       {words.map((w: any) => 
         w.language === tab &&
         <div className="practice-card" key={w._id}>
-        <div>{w.english}</div>
-        <input type="text" onChange={(event) => setAnswer(event.target.value)} />
-        <button value={`${w._id}:${w.target}`} onClick={compareAnswer}>
-        Submit and Compare
+        <IoMdSchool className="school-icon" />
+        <label className="practice-label">Your word in english is:</label>
+        <div className="practice-word">{w.english}</div>
+        <label className="practice-label">{`So in ${w.language} it would be:`}</label>        
+        <input type="text" onChange={(event) => setAnswer(event.target.value)} className="input-answer" />
+        <button value={`${w._id}:${w.target}`} onClick={compareAnswer} className="submit-answer">
+        <VscRunAll />
         </button>
+        <div>More information about this card</div>
         </div>
     )}
     </div>

@@ -59,7 +59,7 @@ const MyHome = ({ navigate }: {navigate: any}) => {
   
 
   return (
-    <div>
+    <div className="myhome-container">
     <h1>This is your home page</h1>
     <div className="create-word-container">
     <button className="language-icon" onClick={() => setLanguage("French")}><GiFrance /></button>

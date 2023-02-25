@@ -4,6 +4,22 @@
   align-items: center;
   margin-left: 760px;
   margin-right: -50px;
+  overflow: hidden;
+}
+
+.practice-card-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../../public/eiffel-tower-3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  background-size: auto 830px;
+  z-index: -1;
 }
 
 .practice-card {
@@ -17,6 +33,7 @@
   border: 4px solid black;
   border-radius: 12px;
   margin: 20px auto;
+  background-color: white;
 }
 
 .school-icon {

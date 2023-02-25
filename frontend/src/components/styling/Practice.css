@@ -25,6 +25,14 @@
   background-image: url('../../../public/eiffel-tower-4.jpg');
 }
 
+.practice-card-container--Spanish::before {
+  background-image: url('../../../public/alhambra.jpg');
+}
+
+.practice-card-container--Italian::before {
+  background-image: url('../../../public/colosseum.jpg');
+}
+
 .practice-card {
   display: flex;
   flex-direction: column;

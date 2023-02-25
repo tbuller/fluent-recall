@@ -25,11 +25,12 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
       .then(response => response.json())
       .then(data => console.log(data))
       sliderRef.current?.slickNext();  
-    
   }
 
+
+
   return (
-    <div className="practice-card-container">
+    <div className={`practice-card-container practice-card-container--${tab}`}>
       <Slider dots={false} infinite={true} speed={500} slidesToShow={1} slidesToScroll={1} className="center" ref={sliderRef}>
       {words.map((w: any) => 
         w.language === tab &&        

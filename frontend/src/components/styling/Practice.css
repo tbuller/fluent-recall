@@ -14,12 +14,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../../../public/eiffel-tower-3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
-  background-size: auto 830px;
+  background-size: auto 825px;
   z-index: -1;
+}
+
+.practice-card-container--French::before {
+  background-image: url('../../../public/eiffel-tower-4.jpg');
 }
 
 .practice-card {

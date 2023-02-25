@@ -2,7 +2,7 @@ import "./styling/Practice.css";
 import { IoMdSchool } from 'react-icons/io';
 import { VscRunAll } from 'react-icons/vsc';
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 const Practice = ({ words, tab }: { words: any, tab: string }) => {
 
   const [answer, setAnswer] = useState("");
-  // const [isCorrect, setIsCorrect] = useState("");
+  const sliderRef = useRef<Slider>(null);
 
   const compareAnswer = (event: React.MouseEvent<HTMLButtonElement>) => {
     const [attemptedId, correctAnswer] = event.currentTarget.value.split(":");
@@ -24,13 +24,13 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
     })
       .then(response => response.json())
       .then(data => console.log(data))
-    // console.log(attemptedId);
-    // console.log(correctAnswer);
+      sliderRef.current?.slickNext();  
+    
   }
 
   return (
     <div className="practice-card-container">
-      <Slider dots={true} infinite={true} speed={500} slidesToShow={3} slidesToScroll={1} className="center">
+      <Slider dots={false} infinite={true} speed={500} slidesToShow={1} slidesToScroll={1} className="center" ref={sliderRef}>
       {words.map((w: any) => 
         w.language === tab &&        
         <div className="practice-card" key={w._id}>

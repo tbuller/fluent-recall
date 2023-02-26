@@ -24,7 +24,9 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
     })
       .then(response => response.json())
       .then(data => console.log(data))
-      sliderRef.current?.slickNext();  
+      setTimeout(() => {
+        sliderRef.current?.slickNext();
+      }, 3000);  
   }
 
 

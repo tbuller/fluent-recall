@@ -70,7 +70,7 @@ const MyHome = ({ navigate }: {navigate: any}) => {
     <input type="text" className="input-word" onChange={handleTarget} />
     <button onClick={saveWord}>Click me</button>
     <button onClick={showWords}>Click me</button>
-    <button className="practice-button" onClick={() => setPracticeMode(!practiceMode)}>{ practiceMode ? <BsGearWideConnected className="gear-icon" /> : "Practice?" }</button>
+    <button className={practiceMode ? "practice-button" : "practice-button-prompt"} onClick={() => setPracticeMode(!practiceMode)}>{ practiceMode ? <BsGearWideConnected className="gear-icon" /> : "Practice?" }</button>
     </div>
     <Tabs words={words} handleWordDelete={handleWordDelete} practiceMode={practiceMode} />
     </div>

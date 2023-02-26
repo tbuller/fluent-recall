@@ -84,3 +84,15 @@
   cursor: pointer;
   border: 3px solid white;
 }
+
+.practice-result-unattempted {
+  color: white;
+}
+
+.practice-result-fail {
+  color: red;
+}
+
+.practice-result-pass {
+  color: green;
+}

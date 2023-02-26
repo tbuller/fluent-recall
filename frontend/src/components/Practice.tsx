@@ -10,11 +10,13 @@ import "slick-carousel/slick/slick-theme.css";
 const Practice = ({ words, tab }: { words: any, tab: string }) => {
 
   const [answer, setAnswer] = useState("");
+  const [result, setResult] = useState("unattempted")
   const sliderRef = useRef<Slider>(null);
 
   const compareAnswer = (event: React.MouseEvent<HTMLButtonElement>) => {
     const [attemptedId, correctAnswer] = event.currentTarget.value.split(":");
     const isCorrect = answer === correctAnswer ? "Pass" : "Fail";
+    isCorrect === "Pass" ? setResult("pass") : setResult("fail"); 
     fetch("http://localhost:8080/words", {
       method: "PATCH",
       headers: {
@@ -24,9 +26,10 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
     })
       .then(response => response.json())
       .then(data => console.log(data))
-      setTimeout(() => {
-        sliderRef.current?.slickNext();
-      }, 3000);  
+    setTimeout(() => {
+      setResult("unattempted");
+      sliderRef.current?.slickNext();
+    }, 3000);
   }
 
 
@@ -45,6 +48,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         <button value={`${w._id}:${w.target}`} onClick={compareAnswer} className="submit-answer">
         <VscRunAll />
         </button>
+        <div className={`practice-result-${result}`}>{w.target}</div>
         <div>More information about this card</div>        
         </div>
     )}

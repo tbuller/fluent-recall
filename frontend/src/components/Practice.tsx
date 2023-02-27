@@ -38,7 +38,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
     <div className={`practice-card-container practice-card-container--${tab}`}>
       <Slider dots={false} infinite={true} speed={500} slidesToShow={1} slidesToScroll={1} className="center" ref={sliderRef}>
       {words.map((w: any) => 
-        w.language === tab &&        
+        w.language === tab &&
         <div className="practice-card" key={w._id}>
         <IoMdSchool className="school-icon" />
         <label className="practice-label">Your word in english is:</label>
@@ -48,6 +48,10 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         <button value={`${w._id}:${w.target}`} onClick={compareAnswer} className="submit-answer">
         <VscRunAll />
         </button>
+        <br></br>
+        {w.past10.map((x:any, index:any) => (
+        <span key={index} className={`rectangle-${x}`}>[]</span>
+        ))}
         <div className={`practice-result-${result}`}>{w.target}</div>
         <div>More information about this card</div>        
         </div>

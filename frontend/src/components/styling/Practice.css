@@ -99,6 +99,20 @@
   border: 3px solid white;
 }
 
+.rectangle-Pass {
+  display: inline-block;
+  color: transparent;
+  background-color: green;
+  margin-right: 3px;
+}
+
+.rectangle-Fail {
+  display: inline-block;
+  color: transparent;
+  background-color: red;
+  margin-right: 3px;
+}
+
 .practice-result-unattempted {
   color: white;
 }

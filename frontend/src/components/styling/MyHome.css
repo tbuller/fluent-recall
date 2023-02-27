@@ -45,6 +45,7 @@
 .language-label {
   font-family: "Gill Sans", sans-serif;
   margin-left: 20px;
+  position: absolute;
 }
 
 .create-word-button {

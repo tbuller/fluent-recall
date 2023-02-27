@@ -1,6 +1,8 @@
 import "./styling/Practice.css";
 import { IoMdSchool } from 'react-icons/io';
 import { VscRunAll } from 'react-icons/vsc';
+import { TiTick } from 'react-icons/ti';
+import { ImCross } from 'react-icons/im'
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import Slider from "react-slick";
@@ -56,7 +58,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         ))}
         {result === "unattempted" ? <span className="rectangle-unattempted">[]</span> : <span className={`rectangle-${result}`} key={Math.random()}>[]</span>}
         </span>
-        <div className={`practice-result-${result}`}>{w.target}</div>
+        <div className={`practice-result-${result}`}>{result === "Pass" ? <TiTick /> : <ImCross />}{w.target}</div>
         <div>More information about this card</div>        
         </div>
     )}

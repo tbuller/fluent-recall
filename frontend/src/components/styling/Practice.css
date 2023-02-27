@@ -103,17 +103,18 @@
   margin-right: 5px;
 }
 
+@keyframes rollout {
+  0% { transform: translateY(-100px); }
+  100% { transform: none; }
+}
+
 .rectangle-Pass {
   display: inline-block;
   color: transparent;
   background-color: green;
   margin-right: 3px;
   border-radius: 3px;
-}
-
-@keyframes rollout {
-  0% { transform: translateY(-100px); }
-  100% { transform: none; }
+  animation: rollout 0.4s;
 }
 
 .rectangle-Fail {

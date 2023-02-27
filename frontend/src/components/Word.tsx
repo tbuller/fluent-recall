@@ -38,7 +38,7 @@ const Word = ({ words, handleWordDelete, tab }: { words: any, handleWordDelete: 
       if (passRate >= 0.7) {
         backgroundColor = "green";
       } else if (passRate >= 0.5 && passRate < 0.7) {
-        backgroundColor = "amber";
+        backgroundColor = "#FFBF00";
       } else {
         backgroundColor = "red";
       }

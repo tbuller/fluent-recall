@@ -4,6 +4,7 @@ import { VscRunAll } from 'react-icons/vsc';
 import { TiTick } from 'react-icons/ti';
 import { ImCross } from 'react-icons/im'
 import React from 'react';
+import InfoCard from "./InfoCard";
 import { useState, useEffect, useRef } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -13,6 +14,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
 
   const [answer, setAnswer] = useState("");
   const [result, setResult] = useState("unattempted")
+  const [showInfo, setShowInfo] = useState(false);
   const sliderRef = useRef<Slider>(null);
 
   const compareAnswer = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -31,7 +33,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
     setTimeout(() => {
       setResult("unattempted");
       sliderRef.current?.slickNext();
-    }, 3000);
+    }, 1000);
   }
 
 
@@ -59,7 +61,8 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         {result === "unattempted" ? <span className="rectangle-unattempted">[]</span> : <span className={`rectangle-${result}`} key={Math.random()}>[]</span>}
         </span>
         <div className={`practice-result-${result}`}>{result === "Pass" ? <TiTick /> : <ImCross />}{w.target}</div>
-        <div>More information about this card</div>        
+        <div className="more-info" onClick={() => setShowInfo(!showInfo)}>{showInfo ? "Hide information" : "Click for more about this word"}</div> 
+        {showInfo && <InfoCard />}       
         </div>
     )}
     </Slider>

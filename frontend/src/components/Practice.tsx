@@ -16,7 +16,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
   const compareAnswer = (event: React.MouseEvent<HTMLButtonElement>) => {
     const [attemptedId, correctAnswer] = event.currentTarget.value.split(":");
     const isCorrect = answer === correctAnswer ? "Pass" : "Fail";
-    isCorrect === "Pass" ? setResult("pass") : setResult("fail"); 
+    isCorrect === "Pass" ? setResult("Pass") : setResult("Fail"); 
     fetch("http://localhost:8080/words", {
       method: "PATCH",
       headers: {
@@ -49,9 +49,13 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         <VscRunAll />
         </button>
         <br></br>
-        {w.past10.map((x:any, index:any) => (
+        <label className="pass-fail-label">Recent attempts:</label> 
+        <span>  
+        {w.past10.slice(-10).map((x:any, index:any) => (
         <span key={index} className={`rectangle-${x}`}>[]</span>
         ))}
+        {result === "unattempted" ? <span className="rectangle-unattempted">[]</span> : <span className={`rectangle-${result}`} key={Math.random()}>[]</span>}
+        </span>
         <div className={`practice-result-${result}`}>{w.target}</div>
         <div>More information about this card</div>        
         </div>

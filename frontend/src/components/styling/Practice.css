@@ -99,11 +99,21 @@
   border: 3px solid white;
 }
 
+.pass-fail-label {
+  margin-right: 5px;
+}
+
 .rectangle-Pass {
   display: inline-block;
   color: transparent;
   background-color: green;
   margin-right: 3px;
+  border-radius: 3px;
+}
+
+@keyframes rollout {
+  0% { transform: translateY(-100px); }
+  100% { transform: none; }
 }
 
 .rectangle-Fail {
@@ -111,16 +121,22 @@
   color: transparent;
   background-color: red;
   margin-right: 3px;
+  border-radius: 3px;
+  animation: rollout 0.4s;
+}
+
+.rectangle-unattempted {
+  color: transparent;
 }
 
 .practice-result-unattempted {
   color: white;
 }
 
-.practice-result-fail {
+.practice-result-Fail {
   color: red;
 }
 
-.practice-result-pass {
+.practice-result-Pass {
   color: green;
 }

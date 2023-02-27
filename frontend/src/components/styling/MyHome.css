@@ -10,11 +10,17 @@
   padding-top: 7px;
   font-size: 22px;
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
 }
 
 .language-icon:hover {
   background-color: blue;
   cursor: pointer;
+  transform: scale(1.1);
+}
+
+.language-icon:active {
+  transform: scale(0.85);
 }
 
 .input-word {
@@ -34,6 +40,11 @@
   color: white;
   border-radius: 50px;
   animation: ripple 4s linear infinite;
+}
+
+.myhome-container .practice-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 @keyframes ripple {
@@ -71,6 +82,12 @@
   border-color: #e76f51;
   color: black;
   border-radius: 50px;
+}
+
+.myhome-container .practice-button-prompt:hover {
+  background-color: green;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 .gear-icon {

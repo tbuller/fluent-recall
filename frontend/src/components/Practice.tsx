@@ -43,7 +43,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         <IoMdSchool className="school-icon" />
         <label className="practice-label">Your word in english is:</label>
         <div className="practice-word">{w.english}</div>
-        <label className="practice-label">{`So in ${w.language} it would be:`}</label>        
+        <label className="practice-prompt">{`So in ${w.language} it would be:`}</label>        
         <input type="text" onChange={(event) => setAnswer(event.target.value)} className="input-answer" />
         <button value={`${w._id}:${w.target}`} onClick={compareAnswer} className="submit-answer">
         <VscRunAll />

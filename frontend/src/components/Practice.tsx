@@ -32,6 +32,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
       .then(data => console.log(data))
     setTimeout(() => {
       setResult("unattempted");
+      setShowInfo(false);
       sliderRef.current?.slickNext();
     }, 1000);
   }
@@ -61,8 +62,8 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         {result === "unattempted" ? <span className="rectangle-unattempted">[]</span> : <span className={`rectangle-${result}`} key={Math.random()}>[]</span>}
         </span>
         <div className={`practice-result-${result}`}>{result === "Pass" ? <TiTick /> : <ImCross />}{w.target}</div>
-        <div className="more-info" onClick={() => setShowInfo(!showInfo)}>{showInfo ? "Hide information" : "Click for more about this word"}</div> 
-        {showInfo && <InfoCard />}       
+        <div className="more-info" onClick={() => setShowInfo(!showInfo)}>{showInfo ? "Hide information" : "Click for more information about this word"}</div> 
+        {showInfo && <InfoCard date={w.createdAt} track={w.past10} />}       
         </div>
     )}
     </Slider>

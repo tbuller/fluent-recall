@@ -1,14 +1,20 @@
+.myhome-greeting {
+  font-family: "Gill Sans", sans-serif;
+  color: green;
+}
+
 .create-word-container {
   padding-bottom: 80px;
 }
 
 .language-icon {
   background-color: rgb(128, 179, 128);
+  color: white;
   margin-left: 5px;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   padding-top: 7px;
-  font-size: 22px;
+  font-size: 30px;
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
 }
@@ -21,6 +27,7 @@
 
 .language-icon:active {
   transform: scale(0.85);
+  background-color: #ea907a;
 }
 
 .input-word {
@@ -28,6 +35,45 @@
   border-radius: 10px;
   height: 20px;
   width: 250px;
+  padding: 5px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 16px;
+}
+
+.language-label {
+  font-family: "Gill Sans", sans-serif;
+  margin-left: 20px;
+}
+
+.create-word-button {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  height: 45px;
+  margin-left: 30px;
+  border-radius: 10px;
+  color: transparent;
+  transition: all 0.1s ease-in-out;
+}
+
+.create-word-button--French {
+  background-image: url('../../../public/french-flag.png') !important;
+}
+
+.create-word-button--Spanish {
+  background-image: url('../../../public/spanish-flag.png') !important;
+}
+
+.create-word-button--Italian {
+  background-image: url('../../../public/italian-flag.png') !important;
+}
+
+.create-word-button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .myhome-container .practice-button {
@@ -39,12 +85,12 @@
   border-color: #e76f51;
   color: white;
   border-radius: 50px;
+  transition: all 0.2s ease-in-out;
   animation: ripple 4s linear infinite;
 }
 
 .myhome-container .practice-button:hover {
   cursor: pointer;
-  transform: scale(1.1);
 }
 
 @keyframes ripple {
@@ -74,6 +120,8 @@
 }
 
 .myhome-container .practice-button-prompt {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 18px;
   float: right;
   margin-right: 40px;
   height: 40px;
@@ -87,7 +135,6 @@
 .myhome-container .practice-button-prompt:hover {
   background-color: green;
   cursor: pointer;
-  transform: scale(1.1);
 }
 
 .gear-icon {

@@ -61,15 +61,16 @@ const MyHome = ({ navigate }: {navigate: any}) => {
 
   return (
     <div className="myhome-container">
-    <h1>This is your home page</h1>
+    <h1 className="myhome-greeting">Create a flashcard below!</h1>
     <div className="create-word-container">
     <button className="language-icon" onClick={() => setLanguage("French")}><GiFrance /></button>
     <button className="language-icon" onClick={() => setLanguage("Spanish")}><GiSpain /></button>
     <button className="language-icon" onClick={() => setLanguage("Italian")}><GiItalia /></button>
+    <label className="language-label">English:</label>
     <input type="text" className="input-word" onChange={handleEnglish} />
+    <label className="language-label">{`${language}:`}</label>
     <input type="text" className="input-word" onChange={handleTarget} />
-    <button onClick={saveWord}>Click me</button>
-    <button onClick={showWords}>Click me</button>
+    <button  className={`create-word-button create-word-button--${language}`} onClick={saveWord}>Click me</button>
     <button className={practiceMode ? "practice-button" : "practice-button-prompt"} onClick={() => setPracticeMode(!practiceMode)}>{ practiceMode ? <BsGearWideConnected className="gear-icon" /> : "Practice?" }</button>
     </div>
     <Tabs words={words} handleWordDelete={handleWordDelete} practiceMode={practiceMode} />

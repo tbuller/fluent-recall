@@ -19,6 +19,7 @@
     "react-slick": "^0.29.0",
     "react-world-flags": "^1.5.1",
     "slick-carousel": "^1.8.1",
+    "text-to-ipa": "^1.0.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },

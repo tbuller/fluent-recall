@@ -144,7 +144,7 @@
 }
 
 .more-info-container {
-  
+  margin-bottom: 15px;
 }
 
 .more-info-button {
@@ -164,5 +164,26 @@
   position: absolute;
   display: inline-block;
   font-family: "Gill Sans", sans-serif;
+}
+
+.info-card-container {
+  padding: 10px;
+  border: 4px solid #00A4BD !important;
+  border-radius: 10px;
+  background-color: rgb(226, 210, 61);
+}
+
+.phonetic-info {
+  
+}
+
+.date-info {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 18px;
+}
+
+.success-info {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 18px;
 }
 

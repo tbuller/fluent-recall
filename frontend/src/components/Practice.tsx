@@ -64,7 +64,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         </span>
         <div className={`practice-result-${result}`}>{result === "Pass" ? <TiTick /> : <ImCross />}{w.target}</div>
         <div onClick={() => setShowInfo(!showInfo)}>{showInfo ? <div className="more-info-container"><AiFillMinusCircle className="more-info-button" /> <div className="more-info-text">Word Info</div></div> : <div className="more-info-container"><AiFillPlusCircle className="more-info-button" /> <div className="more-info-text">Word Info</div></div>}</div> 
-        {showInfo && <InfoCard date={w.createdAt} track={w.past10} />}       
+        {showInfo && <InfoCard w={w} />}       
         </div>
     )}
     </Slider>

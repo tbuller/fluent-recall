@@ -45,32 +45,49 @@
   border-radius: 12px;
   margin: 20px;
   font-family: "Gill Sans", sans-serif;
-  background-color: white;
+}
+
+.practice-card-grey {
+  background-color: grey;
+}
+
+.practice-card-green {
+  background-color: #90EE90;
+}
+
+.practice-card-red {
+  background-color: rgb(235, 167, 167);
+}
+
+.practice-card-amber {
+  background-color: yellow;
 }
 
 .school-icon {
   display: flex;
   font-size: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .practice-label {
   display: inline-block;
   padding-top: 20px;
   margin-top: 20px;
-  /* margin-left: 20px; */
   margin-right: 20px;
+  font-size: 30px;
 }
 
 .practice-word {
   display: inline-block;
-  font-size: 24px;
+  font-size: 40px;
+  padding-left: 0px;
   text-decoration: underline;
   padding-bottom: 20px;
 }
 
 .practice-prompt {
   display: flex;
+  font-size: 20px;
 }
 
 .input-answer {

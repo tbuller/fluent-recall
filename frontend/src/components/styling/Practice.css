@@ -173,17 +173,46 @@
   background-color: rgb(226, 210, 61);
 }
 
-.phonetic-info {
-  
+.answer-info-container {
+  /* margin-bottom: 10px; */
+}
+
+.answer-info {
+  display: inline-block;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.talk-button {
+  display: inline-block;
+  margin-left: 5px;
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  border-radius: 20px;
+  padding-top: 6px;
+  padding-right: 10px;
+}
+
+.talk-button:hover {
+  cursor: pointer;
+  background-color: green;
+  color: white;
 }
 
 .date-info {
   font-family: "Gill Sans", sans-serif;
   font-size: 18px;
+  margin-top: 15px;
+  font-style: italic;
 }
 
 .success-info {
   font-family: "Gill Sans", sans-serif;
   font-size: 18px;
+  margin-top: 5px;
+  font-style: italic;
 }
 

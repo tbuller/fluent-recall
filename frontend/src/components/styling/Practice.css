@@ -143,12 +143,17 @@
   color: green;
 }
 
-.more-info {
-  padding-bottom: 20px;
+.more-info-button {
+  font-size: 26px;
 }
 
-.more-info:hover {
+.more-info-button:hover {
   cursor: pointer;
   color: rgb(0, 21, 255);
-  text-decoration: underline;
 }
+
+.more-info-text {
+  position: relative;
+  margin-top: -10px;
+}
+

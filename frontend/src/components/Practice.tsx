@@ -2,7 +2,8 @@ import "./styling/Practice.css";
 import { IoMdSchool } from 'react-icons/io';
 import { VscRunAll } from 'react-icons/vsc';
 import { TiTick } from 'react-icons/ti';
-import { ImCross } from 'react-icons/im'
+import { ImCross } from 'react-icons/im';
+import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
 import React from 'react';
 import InfoCard from "./InfoCard";
 import { useState, useEffect, useRef } from 'react';
@@ -34,7 +35,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
       setResult("unattempted");
       setShowInfo(false);
       sliderRef.current?.slickNext();
-    }, 1000);
+    }, 1500);
   }
 
 
@@ -62,7 +63,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         {result === "unattempted" ? <span className="rectangle-unattempted">[]</span> : <span className={`rectangle-${result}`} key={Math.random()}>[]</span>}
         </span>
         <div className={`practice-result-${result}`}>{result === "Pass" ? <TiTick /> : <ImCross />}{w.target}</div>
-        <div className="more-info" onClick={() => setShowInfo(!showInfo)}>{showInfo ? "Hide information" : "Click for more information about this word"}</div> 
+        <div onClick={() => setShowInfo(!showInfo)}>{showInfo ? <div><AiFillMinusCircle className="more-info-button" /> <div className="more-info-text">Word Info</div></div> : <div className="more-info-container"><AiFillPlusCircle className="more-info-button" /> Word Info</div>}</div> 
         {showInfo && <InfoCard date={w.createdAt} track={w.past10} />}       
         </div>
     )}

@@ -43,16 +43,10 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
     }, 1500);
   }
 
-  // const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-  //   if (event.key === "Enter") {
-  //     buttonRef.current?.click();
-  //   }
-  // };
-
   return (
     <div className={`practice-card-container practice-card-container--${tab}`}>
       <Slider dots={false} infinite={true} speed={500} slidesToShow={1} slidesToScroll={1} className="center" ref={sliderRef}>
-      {words.map((w: any) => {
+      {words.sort((a: any, b: any) => a.past10.length - b.past10.length).map((w: any) => {
         const previousTries = w.past10;
         let backgroundColor = "background-color:grey;";
         
@@ -79,7 +73,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         {/* <label className="practice-label">Your word in english is:</label> */}
         <p className="practice-word">{w.english}</p>
         <label className="practice-prompt">{`In ${w.language} is:`}</label>        
-        <input type="text" ref={inputRef} onChange={(event) => setAnswer(event.target.value)} value={answer} className="input-answer"  />
+        <input type="text" ref={inputRef} onChange={(event) => setAnswer(event.target.value)} value={answer} className="input-answer" />
         <button value={`${w._id}:${w.target}`} onClick={compareAnswer} className="submit-answer">
         <VscRunAll />
         </button>

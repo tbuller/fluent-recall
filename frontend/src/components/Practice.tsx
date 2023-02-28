@@ -63,7 +63,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         {result === "unattempted" ? <span className="rectangle-unattempted">[]</span> : <span className={`rectangle-${result}`} key={Math.random()}>[]</span>}
         </span>
         <div className={`practice-result-${result}`}>{result === "Pass" ? <TiTick /> : <ImCross />}{w.target}</div>
-        <div onClick={() => setShowInfo(!showInfo)}>{showInfo ? <div><AiFillMinusCircle className="more-info-button" /> <div className="more-info-text">Word Info</div></div> : <div className="more-info-container"><AiFillPlusCircle className="more-info-button" /> Word Info</div>}</div> 
+        <div onClick={() => setShowInfo(!showInfo)}>{showInfo ? <div className="more-info-container"><AiFillMinusCircle className="more-info-button" /> <div className="more-info-text">Word Info</div></div> : <div className="more-info-container"><AiFillPlusCircle className="more-info-button" /> <div className="more-info-text">Word Info</div></div>}</div> 
         {showInfo && <InfoCard date={w.createdAt} track={w.past10} />}       
         </div>
     )}

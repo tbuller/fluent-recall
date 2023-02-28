@@ -17,6 +17,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
   const [result, setResult] = useState("unattempted")
   const [showInfo, setShowInfo] = useState(false);
   const sliderRef = useRef<Slider>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const compareAnswer = (event: React.MouseEvent<HTMLButtonElement>) => {
     const [attemptedId, correctAnswer] = event.currentTarget.value.split(":");
@@ -32,13 +33,21 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
       .then(response => response.json())
       .then(data => console.log(data))
     setTimeout(() => {
+      if (inputRef.current != null) {
+        inputRef.current.value = "";
+      }
+      setAnswer("");
       setResult("unattempted");
       setShowInfo(false);
       sliderRef.current?.slickNext();
     }, 1500);
   }
 
-
+  // const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  //   if (event.key === "Enter") {
+  //     buttonRef.current?.click();
+  //   }
+  // };
 
   return (
     <div className={`practice-card-container practice-card-container--${tab}`}>
@@ -70,7 +79,7 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         {/* <label className="practice-label">Your word in english is:</label> */}
         <p className="practice-word">{w.english}</p>
         <label className="practice-prompt">{`In ${w.language} is:`}</label>        
-        <input type="text" onChange={(event) => setAnswer(event.target.value)} className="input-answer" />
+        <input type="text" ref={inputRef} onChange={(event) => setAnswer(event.target.value)} value={answer} className="input-answer"  />
         <button value={`${w._id}:${w.target}`} onClick={compareAnswer} className="submit-answer">
         <VscRunAll />
         </button>

@@ -130,11 +130,12 @@
   background-color: rgb(255, 255, 255);
   border-color: #e76f51;
   color: black;
+  font-weight: bold;
   border-radius: 50px;
 }
 
 .myhome-container .practice-button-prompt:hover {
-  background-color: green;
+  background-color: rgb(227, 213, 111);
   cursor: pointer;
 }
 

@@ -1,7 +1,7 @@
 import "./styling/Practice.css";
 import { IoMdSchool } from 'react-icons/io';
 import { VscRunAll } from 'react-icons/vsc';
-import { TiTick } from 'react-icons/ti';
+import { VscPass } from 'react-icons/vsc';
 import { ImCross } from 'react-icons/im';
 import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
 import React from 'react';
@@ -69,12 +69,13 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         <IoMdSchool className="school-icon" />
         {/* <label className="practice-label">Your word in english is:</label> */}
         <p className="practice-word">{w.english}</p>
-        <label className="practice-prompt">{`So in ${w.language} it would be:`}</label>        
+        <label className="practice-prompt">{`In ${w.language} is:`}</label>        
         <input type="text" onChange={(event) => setAnswer(event.target.value)} className="input-answer" />
         <button value={`${w._id}:${w.target}`} onClick={compareAnswer} className="submit-answer">
         <VscRunAll />
         </button>
         <br></br>
+        <span className={`practice-result-${result}`}>{result === "Pass" ? <VscPass className="pass-icon" /> : "x"}<p className="pass-fail-answer">{`${w.target}`}</p></span>
         <label className="pass-fail-label">Recent attempts:</label> 
         <span>  
         {w.past10.slice(-10).map((x:any, index:any) => (
@@ -82,7 +83,6 @@ const Practice = ({ words, tab }: { words: any, tab: string }) => {
         ))}
         {result === "unattempted" ? <span className="rectangle-unattempted">[]</span> : <span className={`rectangle-${result}`} key={Math.random()}>[]</span>}
         </span>
-        <div className={`practice-result-${result}`}>{result === "Pass" ? <TiTick /> : <ImCross />}{w.target}</div>
         <div onClick={() => setShowInfo(!showInfo)}>{showInfo ? <div className="more-info-container"><AiFillMinusCircle className="more-info-button" /> <div className="more-info-text">Word Info (includes spoilers)</div></div> : <div className="more-info-container"><AiFillPlusCircle className="more-info-button" /> <div className="more-info-text">Word Info (includes spoilers)</div></div>}</div> 
         {showInfo && <InfoCard w={w} />}       
         </div>

@@ -48,7 +48,7 @@
 }
 
 .practice-card-grey {
-  background-color: grey;
+  background-color: rgb(207, 204, 204);
 }
 
 .practice-card-green {
@@ -56,11 +56,11 @@
 }
 
 .practice-card-red {
-  background-color: rgb(235, 167, 167);
+  background-color: rgb(241, 123, 123);
 }
 
 .practice-card-amber {
-  background-color: yellow;
+  background-color: rgb(255, 191, 0);
 }
 
 .school-icon {
@@ -149,24 +149,49 @@
 }
 
 .practice-result-unattempted {
-  color: white;
+  color: transparent;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 22px;
 }
 
 .practice-result-Fail {
   color: red;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 22px;
 }
 
 .practice-result-Pass {
   color: green;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 22px;
+}
+
+.pass-fail-answer {
+  margin-top: -5px;
+}
+
+.fail-icon {
+  padding-right: 5px;
+  font-size: 14px;
+}
+
+.pass-icon {
+  margin-left: -2px;
+  padding-right: 5px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .more-info-container {
-  margin-bottom: 15px;
+  margin-top: 10px;
+  /* position: absolute; */
+  margin-bottom: 5px;
 }
 
 .more-info-button {
   font-size: 26px;
   display: inline-block;
+  margin-bottom: 15px;
 }
 
 .more-info-button:hover {

@@ -62,3 +62,14 @@
   background-color: #005ba1;
 }
 
+.wrong-credentials {
+  position: absolute;
+  bottom: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+

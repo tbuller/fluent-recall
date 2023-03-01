@@ -72,6 +72,7 @@ const MyHome = ({ navigate }: {navigate: any}) => {
     <input type="text" className="input-word" onChange={handleTarget} />
     <button  className={`create-word-button create-word-button--${language}`} onClick={saveWord}>Click me</button>
     <button className={practiceMode ? "practice-button" : "practice-button-prompt"} onClick={() => setPracticeMode(!practiceMode)}>{ practiceMode ? <BsGearWideConnected className="gear-icon" /> : "Practice?" }</button>
+    <div className="logged-in-as">{`Logged in as: ${localStorage.getItem("loggedIn")}`}</div>
     </div>
     <Tabs words={words} handleWordDelete={handleWordDelete} practiceMode={practiceMode} />
     </div>

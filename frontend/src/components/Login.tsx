@@ -28,6 +28,7 @@ const Login = ({ navigate }: {navigate: any}) => {
     event.preventDefault();
     const matchesUser = users.find(u => u.email === email && u.password === password);
     if (matchesUser) {
+      setWrongPassword(false);
       localStorage.setItem("userID", matchesUser._id)
       localStorage.setItem("loggedIn", matchesUser.email)
       navigate("/myhome");

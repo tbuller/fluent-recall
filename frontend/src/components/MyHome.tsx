@@ -57,8 +57,23 @@ const MyHome = ({ navigate }: {navigate: any}) => {
   const handleWordDelete = (deletedId: string) => {
     setWords(words.filter(w => w._id !== deletedId))
   }
-  
 
+  const handleLogout = () => {
+    localStorage.setItem("userID", "");
+    localStorage.setItem("loggedIn", "");
+    navigate("/");
+  }
+  
+  if (localStorage.getItem("userID") === "") {
+    return (
+      <div className="no-log-in-container">
+      <h1 className="no-login-warning">You need to be logged in to view this page</h1>
+      <h3 className="no-login-message">Log in or sign up to continue</h3>
+      <button className="no-login-nav-button" onClick={() => navigate("/login")}>Log in page</button>
+      <button className="no-login-nav-button" onClick={() => navigate("/signup")}>Sign up page</button>
+      </div>
+    )
+  }
   return (
     <div className="myhome-container">
     <h1 className="myhome-greeting">Create a flashcard below!</h1>
@@ -72,7 +87,8 @@ const MyHome = ({ navigate }: {navigate: any}) => {
     <input type="text" className="input-word" onChange={handleTarget} />
     <button  className={`create-word-button create-word-button--${language}`} onClick={saveWord}>Click me</button>
     <button className={practiceMode ? "practice-button" : "practice-button-prompt"} onClick={() => setPracticeMode(!practiceMode)}>{ practiceMode ? <BsGearWideConnected className="gear-icon" /> : "Practice?" }</button>
-    <div className="logged-in-as">{`Logged in as: ${localStorage.getItem("loggedIn")}`}</div>
+    <div className="logged-in-as">{`Logged in as:${localStorage.getItem("loggedIn")}`}</div>
+    <button className="log-out-button" onClick={handleLogout}>Log out</button>
     </div>
     <Tabs words={words} handleWordDelete={handleWordDelete} practiceMode={practiceMode} />
     </div>

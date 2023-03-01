@@ -17,7 +17,7 @@ const MyHome = ({ navigate }: {navigate: any}) => {
   useEffect(() => {
     fetch("http://localhost:8080/words")
       .then(response => response.json())
-      .then(data => setWords(data.words))
+      .then(data => setWords(data.words.filter((w: any) => w.userID === localStorage.getItem("userID"))))
   }, []);
 
   const handleEnglish = (event: React.ChangeEvent<HTMLInputElement>) => {

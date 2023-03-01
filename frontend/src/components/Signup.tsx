@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import "./styling/Signup.css";
 
 const Signup = ({ navigate }: {navigate: any}) => {
 
@@ -24,7 +25,7 @@ const Signup = ({ navigate }: {navigate: any}) => {
       body: JSON.stringify({ email: email, password: password })
     }).then((response) => {
       if (response.status === 201) {
-        navigate("/myhome");
+        navigate("/login");
       } else {
         console.log(response);
         navigate("/signup");
@@ -38,13 +39,13 @@ const Signup = ({ navigate }: {navigate: any}) => {
   }, [email, password])
 
   return (
-    <div>
-    <form onSubmit={handleSubmit}>
-    <label>Please enter your email:</label>
-    <input type="text" onChange={handleEmailChange}/>
-    <label>Please choose a password:</label>
-    <input type="password" onChange={handlePasswordChange}/>
-    <button type="submit">submit</button>
+    <div className="signup-form-container">
+    <form className="signup-form" onSubmit={handleSubmit}>
+    <label className="prompt-label">Please enter your email:</label>
+    <input className="input-field" type="text" onChange={handleEmailChange}/>
+    <label className="prompt-label">Please choose a password:</label>
+    <input className="input-field" type="password" onChange={handlePasswordChange}/>
+    <button className="submit-button" type="submit">Create account</button>
     </form>  
     </div>
   )

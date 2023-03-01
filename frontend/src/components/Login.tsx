@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import "./styling/Login.css"
 
 const Login = ({ navigate }: {navigate: any}) => {
 
@@ -34,11 +35,13 @@ const Login = ({ navigate }: {navigate: any}) => {
   }
 
   return (
-    <div>
-    <form onSubmit={handleSubmit}>  
-    <input type="text" onChange={handleEmail} />
-    <input type="password" onChange={handlePassword} />
-    <button type="submit">submit</button>
+    <div className="login-form-container">
+    <form className="login-form" onSubmit={handleSubmit}>
+    <label className="prompt-label">Email:</label>    
+    <input className="input-field" type="text" onChange={handleEmail} />
+    <label className="prompt-label">Password:</label>
+    <input className="input-field" type="password" onChange={handlePassword} />
+    <button className="submit-button" type="submit">Log in</button>
     </form>
     </div>
   )

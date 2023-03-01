@@ -24,7 +24,7 @@ const InfoCard = (w : any) => {
     <button onClick={talk} className="talk-button"><RxSpeakerLoud /></button>
     </span>
     <div className="date-info">{`- You added this word on ${new Date(w.w.createdAt).toDateString()}`}</div>
-    <div className="success-info">{`- Success: ${(w.w.past10).filter((x: any) => x === "Pass").length}/${(w.w.past10).length} correct attempts (${Math.round(((w.w.past10).filter((x: any) => x === "Pass").length / (w.w.past10).length) * 100)}%)`}</div>
+    <div className="success-info">{`- Success: ${(w.w.past10).filter((x: any) => x === "Pass").length}/${(w.w.past10).length} correct attempts (${w.w.past10.length > 0 ? Math.round(((w.w.past10).filter((x: any) => x === "Pass").length / (w.w.past10).length) * 100) + "%" : "Attempt to get a success percentage"})`}</div>
     </div>
   )
 }

@@ -1,12 +1,12 @@
 {
-  "name": "filing",
+  "name": "fluent",
   "version": "1.0.0",
-  "description": "notes-filing project",
+  "description": "fluent-recall project",
   "license": "CC BY-NC-SA",
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "start:test": "MONGODB_URL='mongodb://0.0.0.0/filing_test' npm start",
+    "start:test": "MONGODB_URL='mongodb://0.0.0.0/fluent' npm start",
     "test": "jest --runInBand"
   },
   "engines": {

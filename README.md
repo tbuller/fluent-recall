@@ -4,7 +4,7 @@ Click on the image below for a quick demo (please excuse the bad quality from Yo
 
 [![Demo link](https://img.youtube.com/vi/RdIN3OW0Lqw/0.jpg)](https://www.youtube.com/watch?v=RdIN3OW0Lqw)
 
-# Tech
+# Tech Stack
 ![Image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Image](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=for-the-badge)
 ![Image](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
@@ -14,7 +14,7 @@ Click on the image below for a quick demo (please excuse the bad quality from Yo
 
 # Spec
 
-A language-based flashcard web application, designed to help you remember words in foreign languages. Each user can create their own account and have flashcards associated with their account. Once you have created a flashcard, you can enter into practice mode in which you attempt as many flashcards as you want. The application will prioritise flashcards that you have the fewest attempts on when determining which cards to show you first. Your scores for each card are stored, and you can access stats during practice mode.
+A language-based flashcard web application, designed to help you remember words in foreign languages. Each user can create their own account and have flashcards associated with their account. Once you have created a flashcard, you can enter into practice mode during which you can attempt as many flashcards as you like. The application will prioritise flashcards that you have the fewest attempts on when determining which cards to show you first. Your scores for each card are stored, and you can access stats during practice mode. Your flashcards are colour coded according to your success rate.
 
 # Installation
 

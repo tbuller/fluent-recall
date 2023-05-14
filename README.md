@@ -1,10 +1,23 @@
 # Fluent Recall
 
+<div>
+
+<h5 align="center">
+<a href='https://github.com/tbuller/fluent-recall/blob/main/README.md#Demo'> Demo </a> <span> · </span>  
+<a href='https://github.com/tbuller/fluent-recall/blob/main/README.md#Tech'> Tech </a> <span> · </span>
+<a href='https://github.com/tbuller/fluent-recall/blob/main/README.md#Spec'> Spec </a> <span> · </span>
+<a href='https://github.com/tbuller/fluent-recall/blob/main/README.md#Installation'> Installation </a><span> · </span>
+<a href='https://github.com/tbuller/fluent-recall/blob/main/README.md#Features'> Features </a>
+<h5>
+</div>
+  
+# Demo  
+
 Click on the image below for a quick demo (please excuse the bad quality from YouTube)
 
 [![Demo link](https://img.youtube.com/vi/RdIN3OW0Lqw/0.jpg)](https://www.youtube.com/watch?v=RdIN3OW0Lqw)
 
-# Tech Stack
+# Tech
 ![Image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Image](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=for-the-badge)
 ![Image](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
@@ -35,6 +48,20 @@ npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+  
+# Features 
+  
+<div>
+
+<h5 align="center">
+<a href='https://github.com/tbuller/fluent-recall/blob/main/README.md#Create'> Create </a> <span> · </span>  
+<a href='https://github.com/tbuller/fluent-recall/blob/main/README.md#Practice-mode'> Practice-mode </a>
+<h5>
+</div>  
+  
+## Create
+  
+## Practice-mode  
 
 
 

@@ -27,7 +27,7 @@ Click on the image below for a quick demo (please excuse the bad quality from Yo
 
 # Spec
 
-A language-based flashcard web application, designed to help you remember words in foreign languages. Each user can create their own account and have flashcards associated with their account. Once you have created a flashcard, you can enter into practice mode during which you can attempt as many flashcards as you like. The application will prioritise flashcards that you have the fewest attempts on when determining which cards to show you first. Your scores for each card are stored, and you can access stats during practice mode. Your flashcards are colour coded according to your success rate.
+A language-based flashcard web application, designed to help you remember words in foreign languages. Each user can create their own account and have flashcards associated with their account. Once you have created a flashcard, you can enter into practice mode during which you can attempt as many flashcards as you like. The application will prioritise flashcards that you have the fewest attempts on when determining which cards to show you first. Your scores for each card are stored, and you can access stats during practice mode. Your flashcards are colour coded according to your success rate, and you can delete them by clicking on the cross button.
 
 # Installation
 

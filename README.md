@@ -54,14 +54,29 @@ Open [http://localhost:3000](http://localhost:3000) to view the app in your brow
 <div>
 
 <h5 align="center">
+  <a href='https://github.com/tbuller/fluent-recall/blob/main/README.md#Auth'> Auth </a> <span> · </span>
 <a href='https://github.com/tbuller/fluent-recall/blob/main/README.md#Create'> Create </a> <span> · </span>  
 <a href='https://github.com/tbuller/fluent-recall/blob/main/README.md#Practice-mode'> Practice-mode </a>
 <h5>
-</div>  
+</div> 
+  
+## Auth
+  
+Each user can create their own account, and the flashcards that they subsequently create will be associated with their account. Records of attempts are stored in the database.
+  
+![Image](https://github.com/tbuller/fluent-recall/blob/main/frontend/public/README_images/fluent-recall-auth-screenshot.png)  
   
 ## Create
   
-## Practice-mode  
+Users can create words/phrases in their desired target language by selecting from the country icons in the top left of the screen. Once a card is created, it appears dynamically in the relevant tab below. The logged in user can navigate between the tabs to see all of the flashcards that they have in each language. The cards are colour coded according to the success rate that the user has with each flashcard (the cards are grey if the user has attempted the word/phrase fewer than 5 times).  
+  
+![Image](https://github.com/tbuller/fluent-recall/blob/main/frontend/public/README_images/fluent-recall-home-screenshot.png)  
+  
+## Practice-mode 
+  
+Once the logged in user enters into practice mode, they will attempt each word/phrase, starting with the words that they have the fewest attempts on. Once the arrow next to word is clicked, a green/red block gets added to the row of recent attempts. The "Recent attempts" shows the last 10 attempts for the flashcard. Additionally, there is a collapsable "Word info" section, which shows the overall success rate and when the card was added. You can also hear what the word/phrase sounds like by clicking on the speaker icon.
+
+![Image](https://github.com/tbuller/fluent-recall/blob/main/frontend/public/README_images/fluent-recall-practice-screenshot.png)
 
 
 
